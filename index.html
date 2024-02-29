@@ -12,13 +12,16 @@
         <nav id="navbar">
             <a href="#welcome-section"><img src="https://previews.dropbox.com/p/thumb/ACN_jBWyEaPir2QNzjLq_gVOqmWV8nKcn7yLFXgnwXcPfsYlcshqUpef2HeFIm3-3x0xSV5GucScUHbglHhnvB5IYDU47pe6fihkMxHH283BXC-ujjZn3axgE7vZVoGhgDS99WF3R0uUWmdVNXg_1y0loIBYEaMxHw6KhDttZrhVB77WHLUGayIB2e_E0zHft6VcUVF8Ou64pTsltOuQ4secL-rzu1lWiP5fqk3bA5vQhyYWG-BciJWPRw14QVabnYewa6YMWW_jqs8jFLj2WCSqBvnr7vYjN1TjaOoFTRhTueryGVWCQ2Bhku-vJl2wKRHpklE4qjZWAP9M8XKmtJR0/p.png" alt="Xavier Design Logo" height="50px"></a>
             <div class="links">
-                <span class="nav-link"><a href="#welcome-section">Home</a></span>
-                <span class="nav-link"><a href="#projects-page-stop">Projects</a></span>
-                <span class="nav-link"><a href="#contact-page-stop">Contact</a></span>
+                <span><a class="nav-link" href="#welcome-section">Home</a></span>
+                <span><a class="nav-link" href="#projects-page-stop">Projects</a></span>
+                <span><a class="nav-link" href="#contact-page-stop">Contact</a></span>
             </div>
         </nav>
         <!-- Main content including: welcome section, project section, contact section. -->
         <main>
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+            </style>
             <!-- Welcome section including: Logo and description of services -->
             <section id="welcome-section">
                 <div class="welcome-logo-container">
@@ -26,9 +29,13 @@
                 </div>
                 <div class="gradient"></div>
                 <div class="page-heading">
-                    <h1 class="portfolio-heading"><span class="thin-text">Hello, I'm</span> Xavier!</h1>
-                    <p class="work-description">&lt;I'm a <span class="bold-orange"> graphic designer</span> and <span class="bold-orange">front-end developer</span>/></p>
-                    <a href="#contact-page-stop"><button class="btn say-hello">Say hello!</button></a>
+                    <div class="title-container">
+                        <h1 class="portfolio-heading"><span class="thin-text">Hello, I'm</span> Xavier!</h1>
+                    </div>
+                    <div class="intro-container">
+                        <p class="work-description">&lt;I'm a <span class="bold-orange"> graphic designer</span> and <span class="bold-orange">front-end developer</span>/></p>
+                        <a href="#contact-page-stop"><button class="btn say-hello">Say hello!</button></a>
+                    </div>
                 </div>
             </section>
             <!-- Projects section-->
@@ -71,32 +78,34 @@
                 <div class="contact-cta">
                     <h2>Want to work <br><span class="orange">with me?</span></h2>
                     <p>Feel free to <span class="bold-orange">let me know!</span></p>
+                
+                    <form class="direct-contact">
+                        <fieldset>
+                            <label for="name-input">Name</label>
+                            <input id="name-input" type="text" required/>
+                            <label for="company-input">Company</label>
+                            <input id="company-input" type="text" required/>
+                            <label for="email-input">Email</label>
+                            <input id="email-input" type="email" required/>
+                            <label for="description-input">Project Description</label>
+                            <textarea id="description-input"></textarea>
+                            <button class="btn form-submit" type="submit">Send</button>
+                        </fieldset>
+                    </form>
                 </div>
-                <form class="direct-contact">
-                    <fieldset>
-                        <label for="name-input">Name</label>
-                        <input id="name-input" type="text" required/>
-                        <label for="company-input">Company</label>
-                        <input id="company-input" type="text" required/>
-                        <label for="email-input">Email</label>
-                        <input id="email-input" type="email" required/>
-                        <label for="description-input">Project Description</label>
-                        <textarea id="description-input"></textarea>
-                        <button class="btn form-submit" type="submit">Send</button>
-                    </fieldset>
-                </form>
             </section>
         </main>
         <!-- Footer inluding social media -->
         <footer id="socials-section">
             <div class="footer-container">
                 <div class="icons">
-                    <span><a href="https://www.facebook.com/xavier.bodus" target="_blank"><img title="" src="https://cdn.iconscout.com/icon/free/png-512/free-facebook-1464532-1239443.png?f=webp&w=256" alt="Facebook Link"></a></span>
-                    <span><a href="https://www.instagram.com/designedbyxavier/" target="_blank"><img title="" src="https://cdn.iconscout.com/icon/free/png-512/free-instagram-1464521-1239436.png?f=webp&w=256" alt="Instagram Link"></a></span>
-                    <span><a href="https://www.linkedin.com/in/xavier-bodus-a20ab1202/" target="_blank"><img title="" src="https://cdn.iconscout.com/icon/free/png-512/free-linkedin-1464529-1239440.png?f=webp&w=256" alt="Linkedin Link"></a></span>
+                    <span><a class="soc-icon" href="https://www.facebook.com/xavier.bodus" target="_blank"><img title="" src="https://cdn.iconscout.com/icon/free/png-512/free-facebook-1464532-1239443.png?f=webp&w=256" alt="Facebook Link"></a></span>
+                    <span><a class="soc-icon" href="https://www.instagram.com/designedbyxavier/" target="_blank"><img title="" src="https://cdn.iconscout.com/icon/free/png-512/free-instagram-1464521-1239436.png?f=webp&w=256" alt="Instagram Link"></a></span>
+                    <span><a class="soc-icon" href="https://www.linkedin.com/in/xavier-bodus-a20ab1202/" target="_blank"><img title="" src="https://cdn.iconscout.com/icon/free/png-512/free-linkedin-1464529-1239440.png?f=webp&w=256" alt="Linkedin Link"></a></span>
                 </div>
                 <p>This page has been designed for the purposes of freeCodeCamp portfolio project.</p>
             </div>
         </footer>
     </body>
 </html>
+
