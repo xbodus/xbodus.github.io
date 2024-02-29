@@ -5,30 +5,34 @@
 }
 
 * {
-    box-sizing: content-box;
+    box-sizing: border-box;
     /* border: 1px solid white; */
     margin: 0;
     padding: 0;
 }
 
 html {
-    width: 100dvw;
     font-family: 'roboto', sans-serif;
     overflow-x: hidden;
 }
 
+::-webkit-scrollbar { 
+    display: none;
+}
+
 body {
+    width: 100dvw;
     background-color: var(--purple);
 }
 
 #navbar {
-    width: 100dvw;
+    width: 100%;
     background-color: var(--purple);
-    display: grid;
-    grid-template-columns: 5% 90%;
     position: fixed;
     z-index: 1;
     padding: 0 50px;
+    display: flex; 
+    justify-content: space-between;
 }
 
 #navbar > a img {
@@ -36,44 +40,35 @@ body {
     margin: 0 auto;
 }
 
-#navbar > .links {
+.links {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-}
-
-.nav-link {
-    margin: 0 20px;
+    gap: 30px;
     font-weight: 300;
     text-transform: uppercase;
 }
 
-.nav-link > a {
+.nav-link {
     color: var(--text-colorOne);
     text-decoration: none;
 }
 
-.nav-link > a:hover {
+.nav-link:hover {
     text-decoration: underline;
     color: var(--orange-accent);
-}
-
-main {
-    width: 100dvw;
+    transition: .3s;
 }
 
 #welcome-section {
     height: 100vh;
-    width: 100%;
     background-color: var(--purple);
     margin: 0;
     overflow: hidden;
-    z-index: -1;
 }
 
 .gradient {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     background-image:
     linear-gradient(135deg,
@@ -84,14 +79,16 @@ main {
 }
 
 .page-heading {
+    width: fit-content;
     max-width: 60%;
-    height: 600px;
-    position: absolute;
-    top: 17%;
-    left: 10%;
-    display: grid;
-    grid-template-rows: 60% 10% 10%;
-    gap: 10px;
+    min-height: 550px;
+    max-height: 800px;
+    margin: 200px 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 0;
 }
 
 .portfolio-heading {
@@ -102,7 +99,7 @@ main {
 }
 
 .work-description {
-    margin: 0;
+    margin: 0 0 30px;
     width: fit-content;
     padding: 8px 20px;
     font-size: 2rem;
@@ -113,7 +110,7 @@ main {
 }
 
 .say-hello {
-    max-width: 150px;
+    width: fit-content;
     padding: 10px 20px;
     background-color: var(--orange-accent);
     color: white;
@@ -126,6 +123,7 @@ main {
 .thin-text {
     font-weight: 100;
 }
+
 .bold-orange {
     font-weight: bold;
     color: var(--orange-accent);
@@ -160,7 +158,6 @@ main {
 
 #projects-section {
     position: relative;
-    width: 100%;
     height: 100vh;
     background-image: linear-gradient(black 40%, var(--purple));
     overflow: hidden;
@@ -172,16 +169,14 @@ main {
     height: 10px;
 }
 
-#projects-section > h2 {
+#project-links {
     color: var(--orange-accent);
     text-transform: uppercase;
     font-size: 5rem;
     font-weight: 300;
     line-height: 4.5rem;
     text-align: right;
-    position: absolute;
-    top: 17%;
-    right: 10%;
+    margin: 8% 200px;
     z-index: 3;
 }
 
@@ -193,9 +188,9 @@ main {
 }
 
 .bio-container {
-    height: 700px;
-    width: 560px;
-    padding: 50px;
+    height: 850px;
+    width: 40%;
+    padding: 50px 100px;
     background-color: var(--purple);
     opacity: .5;
     border-radius: 50px 50px 50px 0;
@@ -213,14 +208,13 @@ main {
 
 
 .projects-layout{
-    max-width: 970px;
-    position: absolute;
-    top: 47%;
-    right: 150px;
+    margin: 0 200px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: flex-end;
+    gap: 30px;
+    position: relative;
+    bottom: 80px;
     z-index: 2;
 }
 
@@ -238,14 +232,19 @@ main {
 
 .project-container {
     margin: 0 auto;
-    height: 300px;
-    width: 250px;
+    height: 400px;
+    width: 300px;
     background-color: var(--purple);
     border-radius: 30px 30px 0 30px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.project-container:hover {
+    background-color: var(--orange-accent);
+    transition: .3s;
 }
 
 .project-img {
@@ -255,9 +254,9 @@ main {
 }
 
 .project-img:hover {
+    filter: invert(0%) sepia(100%) saturate(7443%) hue-rotate(274deg) brightness(112%) contrast(89%);
     opacity: 1;
     scale: 1.07;
-    transition: .3s;
 }
 
 .img-3 {
@@ -273,21 +272,23 @@ main {
 }
 
 .contact-cta {
-    height: 410px;
-    margin: 0 150px;
-    width: fit-content;
+    height: 500px;
+    margin: 80px 200px;
+    min-width: fit-content;
     position: relative;
-    top: 10%;
     display: grid;
     grid-template-rows: 1fr min-content;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
 }
 
 .contact-cta > h2 {
-    font-size: 6.75rem;
+    font-size: 8rem;
     color: var(--text-colorOne);
     text-transform: uppercase;
-    line-height: 6.75rem;
+    line-height: 8rem;
     font-weight: 100;
+    grid-column: 1;
 }
 
 .orange {
@@ -303,14 +304,15 @@ main {
     border-radius: 50px;
     padding: 8px 20px;
     width: fit-content;
+    grid-column: 1;
+    grid-row: 2;
 }
 
 .direct-contact {
-    height: 70%;
-    max-width: 25%;
-    position: relative;
-    left: 65%;
-    bottom: 62%;
+    height: 100%;
+    width: 100%;
+    grid-column: 2;
+    grid-row: 1/3;
 }
 
 .direct-contact > fieldset {
@@ -384,11 +386,20 @@ button[type="submit"] {
     display: flex;
     justify-content: space-between;
     gap: 15px;
-    opacity: .3;
 }
 
 .icons > span a img {
     height: 30px;
+}
+
+.soc-icon {
+    opacity: .3;
+}
+
+.soc-icon:hover {
+    scale: 1.05;
+    opacity: 1;
+    transition: .3s;
 }
 
 
